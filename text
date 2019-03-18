@@ -1,0 +1,10 @@
+<?php
+$item_result = mysqli_query($conn, "SELECT * FROM machine");
+while($item_row = mysqli_fetch_assoc($item_result)):
+?>
+var id = $("<td>").html("<?php echo $item_row['id'] ?>");
+var name = $("<td>").html("<?php echo $item_row['name'] ?>");
+var price = $("<td>").html("<?php echo $item_row['price'] ?>");
+var qty = $("<td>").html("<?php echo $item_row['qty'] ?>");
+  $("<tr>").append(id).append(name).append(price).append(qty).appendTo("tbody");
+<?php endwhile; ?>
